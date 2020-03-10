@@ -10,19 +10,19 @@
     <form [formGroup]="recipeForm" (ngSubmit)="submitNewRecipe()">
       <ion-item>
         <ion-label position="floating">Recipe Title:</ion-label>
-        <ion-input required type="text" formControlName="Title"></ion-input>
+        <ion-input required type="text" formControlName="title"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Category:</ion-label>
-        <ion-input required type="text" formControlName="Category"></ion-input>
+        <ion-input required type="text" formControlName="foodcategory"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Recipe Link:</ion-label>
-        <ion-input type="text" formControlName="RecipeLink"></ion-input>
+        <ion-input type="text" formControlName="foodlink"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Notes:</ion-label>
-        <ion-input type="text" formControlName="Notes"></ion-input>
+        <ion-input type="text" formControlName="notes"></ion-input>
       </ion-item>
       <ion-button type="submit">Add Recipe!</ion-button>
     </form>

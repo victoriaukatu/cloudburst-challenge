@@ -26,20 +26,26 @@ export class RecipesService {
   }
 
   // This will retrieve the entire list of recipes
-  getRecipes = () => {
+  getRecipes() {
     this.recipeCollection = this.recipeDatabase.list('/recipes');
     return this.recipeCollection;
   }
 
+  // This will get a single recipe
+  getSingleRecipe(id: string) {
+    this.singleRecipe = this.recipeDatabase.object('/recipes' + id);
+    return this.singleRecipe;
+  }
+
   // This will bring the user to where they can edit their recipe
-  // editRecipe(id, food: Recipes) {
-  //   return this.recipeCollection.update({
-  //     title: food.title,
-  //     foodcategory: food.foodcategory,
-  //     foodlink: food.foodlink,
-  //     notes: food.notes
-  //   })
-  // }
+  editRecipe(id, food: Recipes) {
+    return this.singleRecipe.update({
+      title: food.title,
+      foodcategory: food.foodcategory,
+      foodlink: food.foodlink,
+      notes: food.notes
+    })
+  }
 
   // This allows users to delete a recipe
   deleteRecipe(id: string) {

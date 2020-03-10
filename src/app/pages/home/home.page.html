@@ -19,7 +19,7 @@
         <button [routerLink]="['/recipe-edit/', item.$key]">
           <ion-icon name="construct" style="zoom: 2.2"></ion-icon>
         </button>
-        <button (click)="deleteRecipe(item.$key)">
+        <button clear (click)="deleteRecipe(item.$key)">
           <ion-icon name="trash-bin" style="zoom: 2.2"></ion-icon>
         </button>
       </div>

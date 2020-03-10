@@ -22,22 +22,21 @@ export class HomePage implements OnInit {
     recipeBank.snapshotChanges().subscribe(res => {
       this.Recipes = [];
       res.forEach(dish => {
-        let menu = dish.payload.toJSON();
-        menu['$key'] = dish.key;
-        this.Recipes.push(menu as Recipes);
+        let a = dish.payload.toJSON();
+        a['$key'] = dish.key;
+        this.Recipes.push(a as Recipes);
       })
     })
   }
 
-gatherRecipes = () => {
-  this.recipeService.getRecipes().valueChanges().subscribe(res => {
-    console.log('response received:', res);
-  })
-}
+  gatherRecipes() {
+    this.recipeService.getRecipes().valueChanges().subscribe(res => {
+      console.log('response received:', res);
+    })
+  }
 
-deleteRecipe(id) {
-  this.recipeService.deleteRecipe(id);
-}
-
+  deleteRecipe(id) {
+    this.recipeService.deleteRecipe(id);
+  }
 
 }

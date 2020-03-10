@@ -31,6 +31,7 @@ export class RecipeListPage implements OnInit {
 
   submitNewRecipe = () => {
     this.recipeService.addRecipe(this.recipeForm.value).then(res => {
+      console.log('checking...:', res)
       this.recipeForm.reset();
       this.router.navigate(['/home']);
     }).catch(err => console.log('There was an error submitting:', err));
