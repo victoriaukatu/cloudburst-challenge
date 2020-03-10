@@ -9,7 +9,7 @@
 <ion-content>
   <ion-list>
     <ion-list-header>MY RECIPES</ion-list-header>
-    <ion-item ngFor="let item of Recipes" >
+    <ion-item *ngFor="let item of Recipes" >
       <ion-label>
         <h1>
           <ion-icon name="restaurant"></ion-icon> {{item.title}}

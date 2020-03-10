@@ -33,7 +33,7 @@ export class RecipesService {
 
   // This will get a single recipe
   getSingleRecipe(id: string) {
-    this.singleRecipe = this.recipeDatabase.object('/recipes' + id);
+    this.singleRecipe = this.recipeDatabase.object('/recipes/' + id);
     return this.singleRecipe;
   }
 

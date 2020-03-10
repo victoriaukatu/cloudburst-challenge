@@ -15,6 +15,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
 
 import { firebaseConfig } from '../environments/environment';
+import { RecipesService } from './shared/recipes.service';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { firebaseConfig } from '../environments/environment';
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    RecipesService
     // { provide: FirestoreSettingsToken, useValue: {}}
   ],
   bootstrap: [AppComponent]
