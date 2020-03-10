@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Bon Appétit!</ion-title>
+    <p>Scroll down to see all of your recipes</p>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>MY RECIPES</ion-list-header>
+    <ion-item ngFor="let item of Recipes" >
+      <ion-label>
+        <h1>
+          <ion-icon name="restaurant"></ion-icon> {{item.title}}
+        </h1>
+      </ion-label>
+      <div>
+        <button [routerLink]="['/recipe-edit/', item.$key]">
+          <ion-icon name="construct" style="zoom: 2.2"></ion-icon>
+        </button>
+        <button (click)="deleteRecipe(item.$key)">
+          <ion-icon name="trash-bin" style="zoom: 2.2"></ion-icon>
+        </button>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>
