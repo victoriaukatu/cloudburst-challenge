@@ -1,14 +1,14 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Bon Appétit!</ion-title>
-    <p>Scroll down to see all of your recipes</p>
+    <ion-title class="title">Bon Appétit!</ion-title>
+    <p class="subtitle">Scroll down to see all of your recipes</p>
   </ion-toolbar>
 </ion-header>
 
 
 <ion-content>
   <ion-list>
-    <ion-list-header>MY RECIPES</ion-list-header>
+    <ion-list-header class="header">MY RECIPES</ion-list-header>
     <ion-item *ngFor="let item of Recipes" >
       <ion-label>
         <h1>
@@ -25,4 +25,5 @@
       </div>
     </ion-item>
   </ion-list>
+  <ion-button class="add" tab="recipe-list" routerLinkActive="tab-selected" routerLink="/recipe-list">Add a recipe</ion-button>
 </ion-content>
