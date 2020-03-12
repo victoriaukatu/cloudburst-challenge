@@ -9,23 +9,25 @@ import { RecipesService } from '../../shared/recipes.service';
   styleUrls: ['./recipe-edit.page.scss'],
 })
 export class RecipeEditPage implements OnInit {
+  
   updateRecipeForm: FormGroup;
   id: any;
 
   constructor(
     private recipeService: RecipesService,
-    private actRoute: ActivatedRoute,
+    private activatedRoute: ActivatedRoute,
     private router: Router,
-    public fb: FormBuilder
+    public formbuilder: FormBuilder
   ) { 
-    this.id = this.actRoute.snapshot.paramMap.get('id');
+    this.id = this.activatedRoute.snapshot.paramMap.get('id');
     this.recipeService.getSingleRecipe(this.id).valueChanges().subscribe(res => {
     this.updateRecipeForm.setValue(res);
     });
   }
 
+  // Display form to edit recipe entry
   ngOnInit() {
-    this.updateRecipeForm = this.fb.group({
+    this.updateRecipeForm = this.formbuilder.group({
       title: [''],
       foodcategory: [''],
       foodlink: [''],
@@ -34,6 +36,8 @@ export class RecipeEditPage implements OnInit {
     console.log(this.updateRecipeForm.value)
   }
 
+  // This function runs the editRecipe function using the information entered into the form and then
+  // directs the user back to the home page
   updateForm() {
     this.recipeService.editRecipe(this.id, this.updateRecipeForm.value)
       .then(() => {

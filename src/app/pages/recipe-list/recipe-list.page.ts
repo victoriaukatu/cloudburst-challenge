@@ -20,6 +20,8 @@ export class RecipeListPage implements OnInit {
 
   ) {}
 
+
+  // Display the form for adding a recipe
   ngOnInit() {
     this.recipeForm = this.recipeformbuilder.group({
       title: [''],
@@ -29,6 +31,8 @@ export class RecipeListPage implements OnInit {
     })
   }
 
+  // This function runs when a recipe entry is submitted. The addRecipe function is executed using the values from the
+  // form and then the user is directed back to the home page where the recipe list has been updated
   submitNewRecipe = () => {
     this.recipeService.addRecipe(this.recipeForm.value).then(res => {
       console.log('checking...:', res)

@@ -36,7 +36,6 @@ import { RecipesService } from './shared/recipes.service';
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     RecipesService
-    // { provide: FirestoreSettingsToken, useValue: {}}
   ],
   bootstrap: [AppComponent]
 })
